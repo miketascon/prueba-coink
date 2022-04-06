@@ -1,0 +1,169 @@
+<ion-header [translucent]="true">
+  <ion-toolbar mode="md" class="ion-toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button class="back-button" defaultHref="firts-page"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="title">
+      DATOS DE CUENTA
+    </ion-title>
+    <div class="container-passed">
+      <img class="load" src="assets/images/Grupo 20670(1).svg" alt="load">
+
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="container">
+
+  <div class="container-oink">
+    <img class="oink" src="assets/images/Oink.svg" alt="oink">
+    <div><span>¿CUÁLES SON TUS DATOS?</span><br>
+      <p>Ahora necesitamos saber algunos datos tuyos</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <form class="form-register" [formGroup]="form">
+
+    <div class="container-content">
+      <p class="container-title">Documento de identidad</p>
+      <div class="container-document">
+        <ion-list class="">
+          <ion-item>
+            <ion-label position="floating">Tipo de documento</ion-label>
+            <ion-select formControlName="documentType" cancel-text="Cancelar">
+              <ion-select-option *ngFor="let item of documentTypes" value="{{item.description}}">{{item.description}}
+              </ion-select-option>
+
+            </ion-select>
+          </ion-item>
+          <div class="NewAccount-messageContainer"
+            *ngIf="form.get('documentType').errors && form.get('documentType').dirty">
+            <span class="NewAccount-message" text-center *ngIf="form.get('documentType').hasError('required')">Este
+              campo es obligatorio</span>
+
+          </div>
+
+
+
+          <ion-item>
+            <ion-label position="floating">Número de documento</ion-label>
+            <ion-input class="" type="text" maxlength="15" formControlName="documentNumber"></ion-input>
+          </ion-item>
+          <div class="NewAccount-messageContainer"
+            *ngIf="form.get('documentNumber').errors && form.get('documentNumber').dirty">
+            <span class="NewAccount-message" text-center *ngIf="form.get('documentNumber').hasError('required')">Este
+              campo es obligatorio</span>
+            <span class="NewAccount-message" text-center *ngIf="form.get('documentNumber').hasError('pattern')">Solo
+              acepta números</span>
+          </div>
+
+          <ion-item>
+            <ion-label position="floating">Fecha de expedición del documento</ion-label>
+            <ion-input id="open-date-document" [value]="dateValue1" [placeholder]="dateValue2"
+              formControlName="dateExpedition"></ion-input>
+            <ion-popover trigger="open-date-document" show-backdrop="false" size="cover">
+              <ng-template>
+                <ion-datetime #popoverDatetime1 presentation="date"
+                  (ionChange)="dateValue1 = formatDate(popoverDatetime1.value)"></ion-datetime>
+              </ng-template>
+            </ion-popover>
+          </ion-item>
+          <div class="NewAccount-messageContainer"
+            *ngIf="form.get('dateExpedition').errors && form.get('dateExpedition').dirty">
+            <span class="NewAccount-message" text-center *ngIf="form.get('dateExpedition').hasError('required')">Este
+              campo es obligatorio</span>
+
+          </div>
+
+          <ion-item>
+            <ion-label position="floating">Fecha de nacimiento</ion-label>
+            <ion-input id="open-date" [value]="dateValue2" [placeholder]="dateValue2" formControlName="birthday">
+            </ion-input>
+            <ion-popover trigger="open-date" show-backdrop="false" size="cover">
+              <ng-template>
+                <ion-datetime #popoverDatetime2 presentation="date"
+                  (ionChange)="dateValue2 = formatDate(popoverDatetime2.value)"></ion-datetime>
+              </ng-template>
+            </ion-popover>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Genero</ion-label>
+            <ion-select cancel-text="Cancelar" formControlName="gender">
+              <ion-select-option *ngFor="let item of genders" value="{{item.name}}">{{item.name}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+
+
+
+        </ion-list>
+
+      </div>
+      <p>Configura tu cuenta</p>
+      <div class="container-data">
+        <ion-item>
+          <ion-label position="floating">Correo electrónico</ion-label>
+          <ion-input class="" type="text" formControlName="email"></ion-input>
+        </ion-item>
+        <div class="NewAccount-messageContainer" *ngIf="form.get('email').errors && form.get('email').dirty">
+          <span class="NewAccount-message" text-center *ngIf="form.get('email').hasError('required')">Este campo es
+            obligatorio</span>
+          <span class="NewAccount-message" text-center *ngIf="form.get('email').hasError('pattern')">No es un email
+            válido</span>
+        </div>
+
+        <ion-item>
+          <ion-label position="floating">Confirmar correo electrónico</ion-label>
+          <ion-input class="" type="text" formControlName="emailConfirm"></ion-input>
+          <ion-icon name="checkmark" class="icon-email-check"
+            *ngIf="form.value.email === form.value.emailConfirm && form.value.emailConfirm !== ''" slot="end">
+          </ion-icon>
+        </ion-item>
+        <div class="NewAccount-messageContainer"
+          *ngIf="form.get('emailConfirm').errors && form.get('emailConfirm').dirty">
+          <span class="NewAccount-message" text-center *ngIf="form.get('emailConfirm').hasError('required')">Este campo
+            es obligatorio</span>
+          <span class="NewAccount-message" text-center *ngIf="form.get('emailConfirm').hasError('pattern')">No es un
+            email válido</span>
+          <span class="NewAccount-message" text-center *ngIf="form.value.email !== form.value.emailConfirm">El correo de
+            confirmación no coincide</span>
+        </div>
+
+        <ion-item>
+          <ion-label position="floating">PIN de seguridad</ion-label>
+          <ion-input class="" [type]="typePin" maxlength="4" formControlName="pin"></ion-input>
+          <ion-icon color="primary" [name]="nameIcon" slot="end" (click)="showPinElement('pin')"></ion-icon>
+        </ion-item>
+        <div class="NewAccount-messageContainer" *ngIf="form.get('pin').errors && form.get('pin').dirty">
+          <span class="NewAccount-message" text-center *ngIf="form.get('pin').hasError('required')">Este
+            campo es obligatorio</span>
+          <span class="NewAccount-message" text-center *ngIf="form.get('pin').hasError('pattern')">Solo
+            acepta 4 números</span>
+        </div>
+
+        <ion-item>
+          <ion-label position="floating">Confirmar PIN de seguridad</ion-label>
+          <ion-input class="" [type]="typePinConfirm" maxlength="4" formControlName="pinConfirm"></ion-input>
+          <ion-icon color="primary" [name]="nameIconConfirm" slot="end" (click)="showPinElement('confirmPin')">
+          </ion-icon>
+        </ion-item>
+        <div class="NewAccount-messageContainer" *ngIf="form.get('pinConfirm').errors && form.get('pinConfirm').dirty">
+          <span class="NewAccount-message" text-center *ngIf="form.get('pinConfirm').hasError('required')">Este
+            campo es obligatorio</span>
+          <span class="NewAccount-message" text-center *ngIf="form.get('pinConfirm').hasError('pattern')">Solo
+            acepta 4 números</span>
+            <span class="NewAccount-message" text-center *ngIf="form.value.pin !== form.value.pinConfirm">El pin de confirmación no coincide</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-buttons">
+      <button [ngClass]="{'button-register': !form.invalid, 'button-disabled': form.invalid}" (click)="save()"
+        [disabled]="form.invalid" type="button">SIGUIENTE</button>
+    </div>
+  </form>
+
+
+</ion-content>

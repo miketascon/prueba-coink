@@ -1,5 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { TestBed, waitForAsync } from '@angular/core/testing';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 
@@ -9,6 +10,7 @@ describe('AppComponent', () => {
 
     TestBed.configureTestingModule({
       declarations: [AppComponent],
+      imports: [RouterModule],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
   }));

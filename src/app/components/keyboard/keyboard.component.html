@@ -1,0 +1,71 @@
+<div class="container-keyboard">
+  <ion-row>
+    <ion-col class="number-keyboard">
+      <button id="1" class="button-key" (click)="selectNumber($event.srcElement)"
+        [disabled]="disabledButtonNumber">1</button>
+    </ion-col>
+    <ion-col class="number-keyboard">
+      <button id="2" class="button-key" (click)="selectNumber($event.srcElement)"
+        [disabled]="disabledButtonNumber">2</button>
+    </ion-col>
+    <ion-col class="number-keyboard">
+      <button id="3" class="button-key" (click)="selectNumber($event.srcElement)"
+        [disabled]="disabledButtonNumber">3</button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col class="number-keyboard">
+      <button id="4" class="button-key" (click)="selectNumber($event.srcElement)"
+        [disabled]="disabledButtonNumber">4</button>
+    </ion-col>
+    <ion-col class="number-keyboard">
+      <button id="5" class="button-key" (click)="selectNumber($event.srcElement)"
+        [disabled]="disabledButtonNumber">5</button>
+    </ion-col>
+    <ion-col class="number-keyboard">
+      <button id="6" class="button-key" (click)="selectNumber($event.srcElement)"
+        [disabled]="disabledButtonNumber">6</button>
+    </ion-col>
+
+  </ion-row>
+
+  <ion-row>
+    <ion-col class="number-keyboard">
+      <button id="7" class="button-key" (click)="selectNumber($event.srcElement)"
+        [disabled]="disabledButtonNumber">7</button>
+    </ion-col>
+    <ion-col class="number-keyboard">
+      <button id="8" class="button-key" (click)="selectNumber($event.srcElement)"
+        [disabled]="disabledButtonNumber">8</button>
+    </ion-col>
+    <ion-col class="number-keyboard">
+      <button id="9" class="button-key" (click)="selectNumber($event.srcElement)"
+        [disabled]="disabledButtonNumber">9</button>
+    </ion-col>
+
+  </ion-row>
+
+  <ion-row>
+    <ion-col class="number-keyboard">
+      <button *ngIf="controlButton" class="button-key-backespace" (click)="deleteNumber()">
+        <ion-icon name="backspace-outline"></ion-icon>
+      </button>
+    </ion-col>
+    <ion-col class="number-keyboard">
+      <button id="0" class="button-key" (click)="selectNumber($event.srcElement)"
+        [disabled]="disabledButtonNumber">0</button>
+    </ion-col>
+    <ion-col class="number-keyboard">
+      <button *ngIf="controlButton" [ngClass]="{'button-key-circle': disabledButtonSend, 'button-key-circle-green': !disabledButtonSend}"
+        [disabled]="disabledButtonSend" (click)="sendNumber()">
+        <ion-icon name="checkmark-circle"></ion-icon>
+      </button>
+      <button *ngIf="!controlButton" class="button-key-backespace" (click)="deleteNumber()">
+        <ion-icon name="backspace-outline"></ion-icon>
+      </button>
+    </ion-col>
+
+  </ion-row>
+
+</div>

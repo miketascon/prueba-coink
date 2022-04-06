@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar mode="md" class="ion-toolbar">
+      <ion-buttons slot="start">
+          <ion-back-button class="back-button" defaultHref="firts-page"></ion-back-button>
+      </ion-buttons>
+      <ion-title class="title">
+          Número celular
+      </ion-title>
+      <div class="container-passed">
+          <img class="load" src="assets/images/Grupo 20670.svg" alt="load">
+
+      </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="container-oink">
+      <img class="oink" src="assets/images/Oink.svg" alt="oink">
+      <p> Digíta el código que recibiste vía mensaje de texto al {{phone}}</p>
+  </div>
+  <div class="divider"></div>
+
+  <div>
+      <app-input-number [numberView]="codeNumber" [typePlaceholder]="'code'"></app-input-number>
+      <app-keyboard [typeKeyboard]="'code'" (code)="onNumberPhone($event)"
+          (sendNumberSelect)="onSendNumberSelect($event)"></app-keyboard>
+  </div>
+
+</ion-content>

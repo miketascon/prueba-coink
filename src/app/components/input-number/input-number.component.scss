@@ -1,0 +1,21 @@
+.container-inputer {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding: 30px;
+
+  ion-input {
+    width: 100%;
+    height: 80px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 30px;
+    color: #AAAAAA;
+    background-color: #FAFAFA;
+    margin-bottom: 10px;
+    box-shadow: 1px 5px 5px #3535351A;
+    text-align: center;
+  }
+}

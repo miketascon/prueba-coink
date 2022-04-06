@@ -1,0 +1,45 @@
+
+
+.container-keyboard{
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    padding-top: 30px;
+    .number-keyboard{
+
+        text-align: center;
+        
+        .button-key {
+            padding: 10px;
+            font-size: 45px;
+            color: #004B40;
+            background-color: #fff;
+            
+        }
+
+        .button-key-circle{
+            padding: 10px;
+            font-size: 45px;
+            color: #D3D3D3;
+            background-color: #fff;
+        }
+
+
+        .button-key-circle-green {
+            padding: 10px;
+            font-size: 45px;
+            color: #1EEA00;
+            background-color: #fff;
+        }
+
+        .button-key-backespace {
+            padding: 10px;
+            font-size: 45px;
+            color: #004B40;
+            background-color: #fff;
+        }
+    }
+
+    
+
+}

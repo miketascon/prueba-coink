@@ -24,3 +24,209 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+.container-logo {
+  height: 80vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+
+  img {
+    padding-bottom: 20px;
+  }
+
+  p {
+    font-size: 14pt;
+    font-weight: bold;
+    color: #1EEA00;
+    text-align: center;
+    margin: 40px;
+
+  }
+
+
+}
+
+.container-buttons {
+  padding: 20px;
+
+  .button-register {
+    width: 100%;
+    height: 50px;
+    background-color: #1EEA00;
+    color: #004B40;
+    font-size: 14pt;
+    font-weight: bold;
+    border-radius: 30px;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .button-disabled {
+    width: 100%;
+    height: 50px;
+    background-color: #71dc61;
+    color: #004B40;
+    font-size: 14pt;
+    font-weight: bold;
+    border-radius: 30px;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .button-login {
+    width: 100%;
+    height: 50px;
+    background-color: #004B40;
+    color: #fff;
+    font-size: 14pt;
+    font-weight: bold;
+    border-radius: 30px;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+
+}
+
+
+
+.alert-confirm-code {
+
+  background-color: #fff;
+  text-align: center;
+
+  .alert-wrapper.sc-ion-alert-md {
+    border-radius: 15px;
+  }
+
+
+  .alert-title.sc-ion-alert-md {
+    color: #F44336 !important;
+    font-weight: 5px;
+    text-align: center;
+  }
+
+  .alert-message.sc-ion-alert-md {
+    color: #212121;
+    text-align: center;
+    font-weight: 2px;
+  }
+
+  .alert-button.sc-ion-alert-md {
+    color: #004B40;
+    text-transform: none;
+    text-align: center;
+  }
+
+  .alert-button-group.sc-ion-alert-md {
+    display: block ruby;
+  }
+}
+
+.title {
+
+  text-align: center;
+  color: #004B40;
+  padding-top: 30px;
+  margin: 0px;
+}
+
+.back-button {
+  color: #1EEB00;
+  padding: 0;
+}
+
+.ion-toolbar {
+  padding: 15px;
+  padding-left: 0px !important;
+}
+
+
+.container-passed {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+
+  img {
+    padding-top: 15px;
+  }
+}
+
+.container-oink {
+  padding-top: 30px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+
+  img {
+    padding: 25px;
+  }
+
+  p {
+    padding: 15px;
+    margin: 0px;
+    color: #757575;
+  }
+
+  span {
+    color: #004B40;
+  }
+}
+
+.divider {
+  border: 1px solid black;
+  margin-left: 25px;
+  margin-right: 25px;
+  border-color: #1EEB00;
+}
+
+.form-register {
+
+  .NewAccount-message {
+    color: #FF0000;
+    font-size: 10pt;
+    padding: 10px;
+    display: flex;
+
+  }
+
+  .icon-email-check {
+    color: #1EEB00;
+  }
+
+}
+
+
+.container {
+
+  .container-content {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+
+    p {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: #004B40;
+    }
+
+    .container-document {
+        ion-label{
+            color:#AAAAAA;
+        }
+
+    }
+  }
+
+
+}
