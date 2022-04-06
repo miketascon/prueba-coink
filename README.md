@@ -3,10 +3,10 @@ npm install
 
 ## Compilación Android
 
-npx cap init
-npx cap add android
-ionic build
-npx cap sync
+### npx cap init
+### npx cap add android
+### ionic build
+### npx cap sync
 
 ## Descripción
 
